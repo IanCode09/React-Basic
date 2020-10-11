@@ -6,8 +6,8 @@ import Product from './components/Product'
 function App() {
   const [nameProduct, setNameProduct] = useState('No Name')
 
-  const changeNameProductHandler = () => {
-    setNameProduct('Air Jordan')
+  const changeNameProductHandler = (name) => {
+    setNameProduct(name)
   }
 
   const Button = (
@@ -34,9 +34,14 @@ function App() {
       </div>
 
       <main>
-        <Product nameProduct={nameProduct} price='$100' shoes='../images/nike.jpg'>
-          <button className='btn btn-warning' onClick={changeNameProductHandler}>Change Name</button>
-          <button className='btn btn-primary'>Add to Cart</button>
+        <Product 
+          nameProduct={nameProduct} 
+          price='$100' 
+          shoes='../images/nike.jpg'
+          onChangeName={() => changeNameProductHandler('Air Jordan')}
+        >
+
+          <button className='btn btn-warning' onClick={() => changeNameProductHandler('ABAO')}>Change Name</button>
         </Product>
       </main>
     </>

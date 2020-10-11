@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 
 const Product = props => {
     console.log(props);
@@ -8,6 +9,7 @@ const Product = props => {
             <div className="container">
                 <h4><b>{props.nameProduct}</b></h4> 
                 <p>{props.price}</p> 
+                <p><button className='btn btn-warning' onClick={props.onChangeName}>Change Name</button></p>
                 {props.children}
             </div>
         </div>

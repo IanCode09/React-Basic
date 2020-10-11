@@ -39,3 +39,22 @@
 .btn-secondary:hover {
   background-color: rgb(136, 4, 118);
 }
+
+.btn-warning {
+  background-color: rgb(141, 192, 2);
+}
+
+.btn-warning:hover {
+  background-color: rgb(124, 168, 2);
+}
+
+
+.shoes {
+  border: 1px solid black;
+  padding: 10px;
+  margin-left: 100px;
+  margin-top: 600px;
+  margin-bottom: 100px;
+  position: absolute;
+  width: 20%;
+}

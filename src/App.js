@@ -10,6 +10,8 @@ function App() {
     setNameProduct(name)
   }
 
+  const changeInputHandler = event => setNameProduct(event.target.value)
+
   const Button = (
     <>
       <button className='btn btn-primary'>Profil</button>
@@ -39,6 +41,8 @@ function App() {
           price='$100' 
           shoes='../images/nike.jpg'
           onChangeName={() => changeNameProductHandler('Air Jordan')}
+          onChangeInput={changeInputHandler}
+
         >
 
           <button className='btn btn-warning' onClick={() => changeNameProductHandler('ABAO')}>Change Name</button>

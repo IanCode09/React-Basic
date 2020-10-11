@@ -45,7 +45,15 @@
 }
 
 .btn-warning:hover {
-  background-color: rgb(124, 168, 2);
+  background-color: rgb(143, 168, 2);
+}
+
+.btn-warning-1 {
+  background-color: rgb(201, 183, 20);
+}
+
+.btn-warning-1:hover {
+  background-color: rgb(189, 172, 22);
 }
 
 

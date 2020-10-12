@@ -6,11 +6,24 @@ import Product from './components/Product'
 function App() {
   const [nameProduct, setNameProduct] = useState('No Name')
 
-  const changeNameProductHandler = (name) => {
-    setNameProduct(name)
-  }
+  const [showCard, setShowCard] = useState(true)
+
+  const changeNameProductHandler = (name) => setNameProduct(name)
+
+  const toggleShowCard = () => setShowCard(!showCard)
 
   const changeInputHandler = event => setNameProduct(event.target.value)
+
+  const cardsMarkup =  showCard && 
+  <Product 
+    nameProduct={nameProduct} 
+    price='$100' 
+    shoes='../images/nike.jpg'
+    onChangeName={() => changeNameProductHandler('Air Jordan')}
+    onChangeInput={changeInputHandler}
+  >      
+    <button className='btn btn-warning' onClick={() => changeNameProductHandler('ABAO')}>Change Name</button> 
+  </Product>
 
   const Button = (
     <>
@@ -36,17 +49,8 @@ function App() {
       </div>
 
       <main>
-        <Product 
-          nameProduct={nameProduct} 
-          price='$100' 
-          shoes='../images/nike.jpg'
-          onChangeName={() => changeNameProductHandler('Air Jordan')}
-          onChangeInput={changeInputHandler}
-
-        >
-
-          <button className='btn btn-warning' onClick={() => changeNameProductHandler('ABAO')}>Change Name</button>
-        </Product>
+        <button className='btn btn-primary' onClick={toggleShowCard}>Toggle Show/Hide</button>
+            {cardsMarkup}
       </main>
     </>
 
